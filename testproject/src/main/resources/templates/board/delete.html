@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시글 삭제</title>
+</head>
+<body>
+    <h1>게시글 삭제</h1>
+    <p>정말로 게시글을 삭제하시겠습니까?</p>
+    <form th:action="@{/board/{id}/delete(id=${post.id})}" method="post">
+        <input type="hidden" name="_method" value="delete" />
+        <button type="submit">삭제</button>
+    </form>
+    <a href="/board">취소</a>
+</body>
+</html>

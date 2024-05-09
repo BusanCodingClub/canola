@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>게시판</title>
+</head>
+<body>
+    <h1>게시글 목록</h1>
+    <div>
+        <a href="/board/new">새 게시글 작성</a>
+    </div>
+    <div th:each="post : ${posts}">
+        <div>
+            <a th:href="@{/board/{id}(id=${post.id})}" th:text="${post.title}">게시글 제목</a>
+            <p th:text="${post.content}">게시글 내용 요약</p>
+        </div>
+    </div>
+</body>
+</html>
